@@ -11,16 +11,16 @@ class Porteiro(models.Model):
     nome_completo = models.CharField(
         verbose_name='Nome completo',
         max_length=194,
-        )
+    )
     cpf = models.CharField(
         verbose_name='CFP',
         unique=True,
         max_length=11,
-        )
+    )
     telefone = models.CharField(
         verbose_name='Telefone para contato',
         max_length=11,
-        )
+    )
     data_nascimento = models.DateField(
         verbose_name='Data de Nascimento',
         auto_now=False,

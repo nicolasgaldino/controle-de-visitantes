@@ -45,11 +45,11 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
         verbose_name='Email de usuário',
         max_length=194,
         unique=True,
-        )
+    )
     is_active = models.BooleanField(
         verbose_name='Usuário está ativo',
         default=True,
-        )
+    )
     is_staff = models.BooleanField(
         verbose_name="Usuário é da equipe de desenvolvimento",
         default=False,
