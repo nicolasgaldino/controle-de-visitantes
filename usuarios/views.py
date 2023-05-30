@@ -1,5 +1,12 @@
 from django.shortcuts import render
+from visitantes.models import Visitante
 
 
 def index(request):
-    return render(request, 'index.html')
+    todos_visitantes = Visitante.objects.all()
+
+    context = {
+        'todos_visitantes': todos_visitantes,
+    }
+
+    return render(request, 'index.html', context)
