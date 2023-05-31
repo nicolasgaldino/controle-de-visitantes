@@ -8,7 +8,6 @@ class Visitante(models.Model):
     )
     cpf = models.CharField(
         verbose_name='CPF',
-        unique=True,
         max_length=11,
     )
     data_nascimento = models.DateField(
