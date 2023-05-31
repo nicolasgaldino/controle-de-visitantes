@@ -1,6 +1,6 @@
 from django.contrib import messages
 from visitantes.models import Visitante
-from visitantes.forms import VisitanteForm
+from visitantes.forms import VisitanteForm, AutorizaVisitanteForm
 from django.shortcuts import (
     render,
     redirect,
@@ -41,8 +41,27 @@ def informacoes_visitante(request, id):
         id=id,
     )
 
+    form = AutorizaVisitanteForm()
+
+    if request.method == 'POST':
+        form = AutorizaVisitanteForm(
+            request.POST,
+            instance=visitante
+        )
+
+        if form.is_valid():
+            form.save()
+
+            messages.success(
+                request,
+                'Entrada de visitante autorizada com sucesso.'
+            )
+
+            return redirect('index')
+
     context = {
         'nome_pagina': 'Informações do Visitante',
+        'form': form,
         'visitante': visitante,
     }
 
