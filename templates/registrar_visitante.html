@@ -21,7 +21,7 @@
                     </small>
                 </p>
 
-                <form action="POST">
+                <form method="POST">
                     <div class="form-row">
                         {% csrf_token %}
                         {% for field in form %}
@@ -30,6 +30,14 @@
                                 {% render_field field placeholder=field.label class="form-control" %}
                             </div>
                         {% endfor %}
+                    </div>
+
+                    <div class="text-right">
+                        <button class="btn btn-primary" type="submit">
+                            <span class="text">
+                                Registrar Visitante
+                            </span>
+                        </button>
                     </div>
                 </form>
 
