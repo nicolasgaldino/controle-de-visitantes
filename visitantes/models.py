@@ -51,6 +51,26 @@ class Visitante(models.Model):
         on_delete=models.PROTECT,
     )
 
+    def get_horario_saida(self):
+        if self.horario_saida:
+            return self.horario_saida
+        return 'Horário de saída não informado.'
+
+    def get_placa_veiculo(self):
+        if self.placa_veiculo:
+            return self.placa_veiculo
+        return 'Placa de Veículo Não Informada.'
+
+    def get_horario_autorizacao(self):
+        if self.horario_autorizacao:
+            return self.horario_autorizacao
+        return 'Visitante Aguardando Autorização.'
+
+    def get_morador_responsavel(self):
+        if self.morador_responsavel:
+            return self.morador_responsavel
+        return 'Visitante Aguardando Autorização.'
+
     class Meta:
         verbose_name = 'Visitante'
         verbose_name_plural = 'Visitantes'
