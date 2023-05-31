@@ -84,6 +84,19 @@ class Visitante(models.Model):
             return self.morador_responsavel
         return 'Visitante Aguardando Autorização.'
 
+    def get_cpf(self):
+        if self.cpf:
+            cpf = str(self.cpf)
+
+            cpf_part_one = cpf[0:3]
+            cpf_part_two = cpf[3:6]
+            cpf_part_three = cpf[6:9]
+            cpf_part_four = cpf[9:]
+
+            cpf_formatted = f'{cpf_part_one}.{cpf_part_two}.{cpf_part_three}-{cpf_part_four}'  # noqa E501
+
+            return cpf_formatted
+
     class Meta:
         verbose_name = 'Visitante'
         verbose_name_plural = 'Visitantes'
