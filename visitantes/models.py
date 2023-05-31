@@ -7,7 +7,7 @@ class Visitante(models.Model):
         max_length=194,
     )
     cpf = models.CharField(
-        verbose_name='CFP',
+        verbose_name='CPF',
         unique=True,
         max_length=11,
     )

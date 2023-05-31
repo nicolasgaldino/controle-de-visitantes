@@ -22,6 +22,7 @@ INSTALLED_APPS += [
     'usuarios',
     'porteiros',
     'visitantes',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
